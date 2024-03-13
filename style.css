@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+* {
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+align-items: center;
+
+    background: #003b59;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    line-height: 1.3;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* start main container */
+.container {
+  left: 25%;
+  max-width: 100%;
+  width: 50%;
+  /* height: 50%; */
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 0;
+  border-radius: 70px;
+  overflow: hidden;
+  justify-content: center;
+  min-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+
+
+.container::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: #399953;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(#04f945, #063212), linear-gradient(#ffb700, #725304), linear-gradient(#ff2010, #640d07), linear-gradient(#085dfb, #052053);
+  animation: rotate 10s linear infinite;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 6px;
+  top: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  backdrop-filter: blur(520px);
+  border-radius: 70px;
+
+}
+
+
+@keyframes opacityChange {
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .5;
+  }
+}
+/* end main container */
+button:hover {
+  cursor: pointer;
+  background-color: #73E831;
+}
+
+ul {
+  list-style-type: none; 
+}
+
+/* -------------common style ends ---------------------*/
+
+/* ==============container ========================*/
+
+h1 {
+  color: #fff;
+  font-size: 3rem;
+}
+
+/* ,,,,,,,,,,,,,,,,,,,,,,,,,todo-form,,,,,,,,,,,,,,,,,,,,,,,,, */
+
+.todo-form {
+  margin: -15px 4px 0px 16px;
+}
+
+.todo-input {
+  width: 250px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.add-button {
+  background-color: #0000ff;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 7px;
+  font-size: 1.2rem;
+}
+
+/* ....................todo-form style ends ...................*/
+
+/* -----------------todo-items --------------------*/
+.todo-items {
+  min-width: 400px;
+  padding-top: 3%;
+  padding-bottom: 10%;
+}
+
+/* ---------------each li with class="item" ---------------------*/
+.item {
+  backdrop-filter: blur(520px);
+  color: #fff;
+  padding: 10px;
+  font-size: 1.3rem;
+  margin-left: -8%;
+}
+
+.item:first-child {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.item:last-child {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+/*--------------item style end -----------------*/
+
+.checkbox {
+  margin-right: 10px;
+}
+.delete-button {
+  float: right;
+  background-color: #0000ff;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  padding: 2px 5px;
+  margin-left: 10px;
+  font-size: 1.1rem;
+  font-weight: 550;
+}
+
+.checked { 
+  text-decoration: line-through;
+}
+
+/* ---------------todo-items style ends --------------*/
+
+/*-------------- container style ends -------------*/
+
+/* -----------------Animation's--------------------- */
+#animations {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  
+}
+
+#main_body {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  
+}
+
+.body_class img {
+  width: 10vw;
+  border-radius: 50%;
+}
+
+.body_class a {
+  font-size: 1.3rem;
+  padding: 10px;
+}
+
+.body_class a:hover {
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+
+/*----------------------- Responsiveness via screen widths ------------------*/
+
+@media screen and (max-width: 768px) {
+  .body_class img {
+      width: 30%;
+      border-radius: 50%;
+  }
+  .body_class a {
+      font-size: 1.3rem;
+      padding: 0px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .body_class img {
+      width: 25%;
+      border-radius: 50%;
+  }
+  .body_class a {
+      font-size: 1.3rem;
+      padding: 4px;
+  }
+}
